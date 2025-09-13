@@ -85,7 +85,7 @@
                             <a href="#categoria-diseño">Diseño</a>
                         </div>
                     </div>
-                    <img src="imagenes/logo3.png" alt="Diseño web responsivo" class="article-img">
+                    <img src="imagenes/logo 3.png" alt="Diseño web responsivo" class="article-img">
                     <div style="padding: 20px;">
                         <p>El diseño responsivo ya no es una opción, sino una necesidad. Aprende las técnicas más actuales para crear sitios web que funcionen perfectamente en cualquier dispositivo.</p>
                         <p>Desde media queries hasta CSS Grid y Flexbox, cubrimos todas las herramientas necesarias para el desarrollo moderno...</p>
@@ -94,6 +94,30 @@
                             <span class="tag">Responsivo</span>
                             <span class="tag">CSS Grid</span>
                             <span class="tag">Flexbox</span>
+                        </div>
+                        <a href="#leer-mas">Leer más →</a>
+                    </div>
+                </article>
+
+                <article id="sobre-nosotros">
+                    <div class="dise">
+                        <h2><a href="#post3">Sobre Nosotros</a></h2>
+                        <div class="article-meta">
+                            Por <strong>Karla Delgado</strong> | 
+                            <time datetime="2025-01-05">12 de septiembre, 2025</time> | 
+                            <a href="#categoria-diseño">Diseño</a>
+                        </div>
+                    </div>
+                    <img src="imagenes/logo4.jpg" alt="Sobre nosotros" class="article-img">
+                    <div style="padding: 20px;">
+                        <p>En <strong>KarlaBlog</strong> compartimos ideas, recursos y tendencias del mundo digital de manera clara y accesible. 
+      Nuestro objetivo es inspirar, enseñar y motivar a cada lector a aprender algo nuevo, manteniendo siempre un estilo cercano y auténtico. 
+      Aquí creemos que el conocimiento crece cuando se comparte.</p>
+                        <div class="tags">
+                            <span class="tag">Misión</span>
+                            <span class="tag">Visión</span>
+                            <span class="tag">Equipo</span>
+                            <span class="tag">Servicios</span>
                         </div>
                         <a href="#leer-mas">Leer más →</a>
                     </div>
@@ -152,7 +176,7 @@
         </main>
     </div>
 
-<footer  id="contacto">
+<footer id="contacto">
   <div class="container">
     <p>&copy; 2025 KarlaBlog. Todos los derechos reservados.</p>
     <p>
@@ -162,5 +186,21 @@
     </p>
   </div>
 </footer>
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute('href'));
+        const header = document.querySelector('header');
+        const headerHeight = header.offsetHeight;
+
+        window.scrollTo({
+          top: target.offsetTop - headerHeight - 10, // deja aire extra
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
