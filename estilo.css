@@ -238,9 +238,9 @@ nav ul {
     position: absolute;
     top: 70px;
     right: 10px;        /* un poquito separado del borde */
-    background: #f8a5c2;
-    width: 220px;       /*  más angosto que 100% */
-    padding: 5px;      /* menos espacio interno */   ------
+    background: rgb(255, 192, 203);
+    width: 180px;       /*  más angosto que 100% */
+    padding: 6px;      /* menos espacio interno */   ------
     border-radius: 10px; /*  redondeado bonito */
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     font-size: 14px;    /*  texto más pequeño */
@@ -257,7 +257,7 @@ nav ul {
        nav a {
     color: black;
     text-decoration: none;
-    padding: 8px 10px;   /* 👈 menos alto */
+    padding: 6px 8px;   /* 👈 menos alto */
     display: block;     * (Nuevo) ocupa todo el ancho para mejor clic */
     font-size: 14px;     /* 👈 más pequeño */
 }
@@ -265,6 +265,7 @@ nav ul {
 
 
 }
+
 
 
 
