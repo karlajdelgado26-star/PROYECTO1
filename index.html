@@ -13,6 +13,9 @@
             <div class="header-content">
                 <h1>KarlaBlog</h1>
                 <img src="imagenes/foto.jpg" alt="foto" class="img-circular">
+
+                   <!-- MEBÚ HAMBURGUESA -->
+                    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
                 <nav>
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
@@ -202,6 +205,27 @@
       });
     });
   </script>
+
+    <!--controla la apertura/cierre del menú hamburguesa en móviles-->
+    <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('nav ul');
+  const navLinks = document.querySelectorAll('nav a');
+
+  // Abrir/cerrar menú al presionar el ícono
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+
+  // Cerrar menú al hacer clic en un enlace
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+    });
+  });
+</script>
+
 </body>
 
 </html>
+
