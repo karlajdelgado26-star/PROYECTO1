@@ -26,16 +26,29 @@
 
         .header-content { 
                 display: flex; 
-                justify-content: space-between; 
-                align-items: center; }
+                justify-content: space-between; /* (Nuevo respecto al anterior) ahora los elementos se distribuyen entre izquierda y derecha */
+                align-items: center;  /* (Nuevo) alinea verticalmente el logo, título y menú */
+               flex-direction: row;            /* (agregado) antes no estaba, asegura que siempre estén en horizontal */
+                 padding: 0 20px;                /* (Nuevo) mete un espacio interno a los lados */
+        }
+
+        
+       /* Agrupar logo y título */
+       .header-left {
+       display: flex;       /* (Nuevo) agrupa logo + texto */
+       align-items: center; /* (Nuevo) centra verticalmente dentro del grupo */
+       gap: 10px;           /* (Nuevo) deja separación limpia entre logo y título */
+       }
+
 
         nav ul {
                  display: flex;
-                  list-style: none; 
-                }
+                 list-style: none; 
+                  gap: 20px;          /* (Cambio) antes se usaba margin-left en <li>, ahora se usa gap, más moderno y ordenado */
+       }
 
         nav li { 
-                margin-left: 20px;
+                margin: 0;          /* (Cambio) antes tenía margin-left:20px, ahora se elimina porque usamos gap */
          }
 
         nav a { color: rgb(0, 0, 0); 
@@ -137,4 +150,109 @@
     height: auto;
     margin: 0 auto;
     border-radius: 8px;
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;          /* se oculta por defecto */
+  font-size: 2rem;        /* (Nuevo) tamaño grande para que se vea bien en móvil */
+  background: none;       /* (Nuevo) sin fondo para que sea minimalista */
+  border: none;           /* (Nuevo) limpio, sin borde */
+  cursor: pointer;        /* (Nuevo) cambia cursor para mostrar que es clickeable */
+  color: #000;            /* (Nuevo) color negro para contraste */
+}
+
+       /*  Diseño Responsivo*/
+/* Tablets */
+@media (max-width: 992px) {
+  nav ul {
+    display: none;         /*  se oculta el menú por defecto en pantallas medianas */
+    flex-direction: column;/* (Nuevo) en vez de horizontal, ahora en columna */
+    background: rgb(255, 192, 203); /* (Nuevo) el menú flotante hereda el rosado del header */
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 220px;          /* (Nuevo) cajita más angosta */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2); /* (Nuevo) da sensación de que está flotando */
+  }
+
+  nav ul.show {
+    display: flex; /* aparece cuando se active con JS */
+  }
+
+padding: 10px; /* (Nuevo) más espacio en móvil */
+    display: block;
+  }
+
+  .menu-toggle {
+    display: block; /* (Nuevo) aparece el ícono hamburguesa en móviles/tablets */
+  }
+
+  main {
+    grid-template-columns: 1fr; /* (Nuevo) contenido en una sola columna */
+  }
+
+  /* Orden en responsive */
+  article {
+    order: 1; /* primero los artículos */
+  }
+
+  aside {
+    order: 2; /* después aside */
+    margin-top: 20px;
+  }
+
+  footer {
+    order: 3; /* de último footer */
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem; /* (Nuevo) reduce tamaño del título */
+  }
+
+  .img-circular {
+    width: 60px;       /* (Nuevo) imágenes más pequeñas */
+    height: 60px;
+  }
+
+  article {
+    margin-bottom: 20px; /* (Nuevo) menos separación */
+  }
+
+  article h2 {
+    font-size: 1.2rem; /* (Nuevo) títulos más pequeños en móvil */
+  }
+
+  nav ul {
+    display: none;                /* (Nuevo) oculto por defecto */
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    width: 200px;                 /* ( Ajustado) más pequeñito que en tablet */
+    background: rgb(255, 192, 203); /* (Nuevo) mismo color que header */
+    border-radius: 12px;          /* (Nuevo) bordes más redondeados */
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25); /* (Nuevo) sombra más fuerte */
+  }
+
+  nav ul.show {
+    display: flex; /* ( Nuevo) aparece al hacer clic */
+  }
+
+  nav ul li {
+    text-align: left; /* (Nuevo) links alineados a la izquierda */
+    margin: 5px 0;
+  }
+
+  nav a {
+    display: block; /* (Nuevo) ocupa todo el ancho para mejor clic */
+    padding: 8px;
+  }
+
+
 }
