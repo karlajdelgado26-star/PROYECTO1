@@ -251,7 +251,7 @@ nav ul {
 
   nav ul li {
     text-align: left; /* (Nuevo) links alineados a la izquierda */
-    margin: 2px 0;   ----
+    margin: 1px 0;   ----
   }
 
        nav a {
@@ -265,5 +265,6 @@ nav ul {
 
 
 }
+
 
 
